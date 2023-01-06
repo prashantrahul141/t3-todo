@@ -4,7 +4,7 @@ const CompHead = ({ headTitle }: { headTitle: string }) => {
   return (
     <Head>
       <title>{`Todo | ${headTitle}`}</title>
-      <meta name="description" content="Simple todo app" />
+      <meta name="description" charSet="UTF-8" content="Simple todo app" />
     </Head>
   );
 };
