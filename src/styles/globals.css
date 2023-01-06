@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-signin {
+    @apply btn-block btn my-5 rounded;
+  }
+}
