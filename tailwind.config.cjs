@@ -8,6 +8,21 @@ module.exports = {
       lato: ['Lato'],
       oswald: ['Oswald'],
     },
+    colors: {
+      themePrimary: {
+        100: '#f3e8ff',
+        200: '#dbbdfc',
+        300: '#c393f6',
+        400: '#ab6ded',
+        500: '#954ee1',
+        600: '#8036d0',
+        700: '#6d23bb',
+        800: '#5b169f',
+        900: '#490d7e',
+        1000: '#360759',
+        1100: '#210333',
+      },
+    },
   },
   plugins: [require('daisyui')],
 
