@@ -1,3 +1,4 @@
+import { signOut } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
@@ -38,9 +39,18 @@ const TopBar: FC<{ avatarUrl: string }> = ({ avatarUrl }) => {
           {/* Nav options */}
           {showOptionsMenu && (
             <div className='absolute top-12 right-12 w-max rounded-md bg-themePrimary-1050 pt-1 pb-1 outline outline-1 outline-themePrimary-200/50'>
-              <div className='nav-navitem pt-1 pb-1'>Create Note</div>
-              <div className='nav-navitem py-1'>Create Folder</div>
-              <div className='nav-navitem pb-1 pt-1'>Sign Out</div>
+              <Link href='./new/note'>
+                <div className='nav-navitem pt-1 pb-1'>Create Note</div>
+              </Link>
+              <Link href='./new/folder'>
+                <div className='nav-navitem py-1'>Create Folder</div>
+              </Link>
+              <Link href='./settings'>
+                <div className='nav-navitem py-1'>Settings</div>
+              </Link>
+              <div className='nav-navitem pb-1 pt-1' onClick={() => signOut()}>
+                Sign Out
+              </div>
             </div>
           )}
         </div>
