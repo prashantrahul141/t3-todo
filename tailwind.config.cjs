@@ -8,6 +8,7 @@ module.exports = {
       lato: ['Lato'],
       oswald: ['Oswald'],
       roboto: ['Roboto'],
+      spaceGrotesk: ['Space Grotesk'],
     },
     colors: {
       themePrimary: {
