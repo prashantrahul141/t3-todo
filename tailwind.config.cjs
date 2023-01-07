@@ -7,6 +7,7 @@ module.exports = {
     fontFamily: {
       lato: ['Lato'],
       oswald: ['Oswald'],
+      roboto: ['Roboto'],
     },
     colors: {
       themePrimary: {
@@ -20,6 +21,7 @@ module.exports = {
         800: '#5b169f',
         900: '#490d7e',
         1000: '#360759',
+        1050: '#23132c',
         1100: '#1e1026',
       },
     },
