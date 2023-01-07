@@ -10,7 +10,7 @@ const TopBar: FC<{ avatarUrl: string }> = ({ avatarUrl }) => {
     <>
       <div
         className='top-0 h-14 w-full outline outline-1 outline-themePrimary-200/20 backdrop-blur-md backdrop-opacity-90'
-        onMouseLeave={() => setShowOptionsMenu(true)}>
+        onMouseLeave={() => setShowOptionsMenu(false)}>
         <div className='relative mx-auto flex h-full w-full max-w-4xl items-center'>
           {/* logo */}
           <Link href={'./'}>
