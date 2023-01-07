@@ -1,7 +1,22 @@
+/* tailwind utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* Base Styles */
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/*  Custom Components */
 @layer components {
   .btn-signin {
     @apply btn-block btn my-5 rounded;
