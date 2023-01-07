@@ -1,17 +1,37 @@
 import { type NextPage } from 'next';
 import CompHead from '@components/common/CompHead';
 import TopBar from '@components/common/TopBar';
-// import Head from "next/head";
 // import Link from "next/link";
-// import { useSession } from "next-auth/react";
+import { useSession } from 'next-auth/react';
+import Welcome from '@components/home/welcome';
+import Loading from '@components/common/Loading';
 
 // import { api } from "../utils/api";
 
 const Home: NextPage = () => {
+  const { data: session, status } = useSession();
+
+  if (status == 'unauthenticated') {
+    return (
+      <>
+        <Welcome></Welcome>
+      </>
+    );
+  } else if (status == 'authenticated') {
+    return (
+      <>
+        <CompHead headTitle='Home'></CompHead>
+        <TopBar
+          avatarUrl={
+            session.user?.image || '/public/static/defaultavatar.jpg'
+          }></TopBar>
+      </>
+    );
+  }
+
   return (
     <>
-      <CompHead headTitle='Home'></CompHead>
-      <TopBar avatarUrl='https://cdn.discordapp.com/avatars/995581232459038760/d37933badeb94c9f07d3fabc103df2f0.png'></TopBar>
+      <Loading></Loading>
     </>
   );
 };
