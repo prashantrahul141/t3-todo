@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 /* tailwind utilities */
@@ -20,6 +21,10 @@
 /*  Custom Components */
 @layer components {
   .btn-signin {
-    @apply btn-block btn my-5 rounded border border-themePrimary-500 bg-transparent text-themePrimary-400 hover:bg-themePrimary-500 hover:text-themePrimary-1000;
+    @apply btn-block btn my-5 rounded border border-themePrimary-500 bg-transparent font-roboto tracking-wide text-themePrimary-400 hover:bg-themePrimary-500 hover:text-themePrimary-1000;
+  }
+
+  .nav-navitem {
+    @apply cursor-pointer px-4 font-roboto text-base tracking-wide hover:bg-themePrimary-400 hover:text-themePrimary-1050;
   }
 }
