@@ -15,7 +15,7 @@ const TopBar: FC<{ avatarUrl: string }> = ({ avatarUrl }) => {
         <div className='relative mx-auto flex h-full w-full max-w-4xl items-center'>
           {/* logo */}
           <Link href={'./'}>
-            <span className='ml-4 font-oswald text-4xl text-themePrimary-100'>
+            <span className='ml-4 font-spaceGrotesk text-4xl text-themePrimary-100'>
               T3T
             </span>
           </Link>
