@@ -1,3 +1,4 @@
+import CompHead from '@components/common/CompHead';
 import Loading from '@components/common/Loading';
 import TopBar from '@components/common/TopBar';
 import type { NextPage } from 'next';
@@ -11,6 +12,7 @@ const NewNote: NextPage = () => {
   if (status == 'authenticated') {
     return (
       <>
+        <CompHead headTitle='New Note'></CompHead>
         <TopBar avatarUrl={session.user?.image}></TopBar>
       </>
     );
