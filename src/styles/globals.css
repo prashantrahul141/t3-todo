@@ -26,6 +26,6 @@
   }
 
   .nav-navitem {
-    @apply cursor-pointer px-4 font-roboto text-base tracking-wide hover:bg-themePrimary-400 hover:text-themePrimary-1050;
+    @apply cursor-pointer px-4 font-roboto text-base tracking-wide hover:bg-themePrimary-300 hover:text-themePrimary-1050;
   }
 }
