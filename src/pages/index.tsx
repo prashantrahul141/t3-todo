@@ -4,6 +4,7 @@ import TopBar from '@components/common/TopBar';
 import { useSession } from 'next-auth/react';
 import Welcome from '@components/home/welcome';
 import Loading from '@components/common/Loading';
+import FoldersView from '@components/home/foldersview';
 
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
       <>
         <CompHead headTitle='Home'></CompHead>
         <TopBar avatarUrl={session.user?.image}></TopBar>
+        <FoldersView></FoldersView>
       </>
     );
   }
