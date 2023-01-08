@@ -1,10 +1,12 @@
-import Head from "next/head";
+import Head from 'next/head';
+import type { FC } from 'react';
 
-const CompHead = ({ headTitle }: { headTitle: string }) => {
+const CompHead: FC<{ headTitle: string }> = ({ headTitle = 'None' }) => {
   return (
     <Head>
-      <title>{`Todo | ${headTitle}`}</title>
-      <meta name="description" charSet="UTF-8" content="Simple todo app" />
+      {headTitle === 'None' && <title>{`Todo`}</title>}
+      {headTitle !== 'None' && <title>{`Todo | ${headTitle}`}</title>}
+      <meta name='description' charSet='UTF-8' content='Simple todo app' />
     </Head>
   );
 };
