@@ -1,11 +1,13 @@
 import Head from 'next/head';
 import type { FC } from 'react';
 
-const CompHead: FC<{ headTitle: string }> = ({ headTitle = 'None' }) => {
+const CompHead: FC<{ headTitle: string | undefined }> = ({
+  headTitle = undefined,
+}) => {
   return (
     <Head>
-      {headTitle === 'None' && <title>{`Todo`}</title>}
-      {headTitle !== 'None' && <title>{`Todo | ${headTitle}`}</title>}
+      {headTitle === undefined && <title>{`Todo`}</title>}
+      {headTitle !== undefined && <title>{`Todo | ${headTitle}`}</title>}
       <meta name='description' charSet='UTF-8' content='Simple todo app' />
     </Head>
   );
