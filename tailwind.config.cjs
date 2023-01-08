@@ -3,7 +3,12 @@ module.exports = {
   mode: 'jit',
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        FolderCards: 'repeat(auto-fit, minmax(150px, 1fr))',
+        FolderCardsSm: 'repeat(auto-fit, minmax(80px, 1fr))',
+      },
+    },
     fontFamily: {
       lato: ['Lato'],
       oswald: ['Oswald'],
