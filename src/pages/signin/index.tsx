@@ -12,7 +12,7 @@ const Signin: NextPage = () => {
           <h6 className='font-lato text-xs tracking-wide text-themePrimary-100'>
             WELCOME TO
           </h6>
-          <h2 className='font-oswald text-6xl tracking-wide text-themePrimary-400'>
+          <h2 className='font-spaceGrotesk text-6xl tracking-wide text-themePrimary-400'>
             T3-TODO
           </h2>
         </div>
