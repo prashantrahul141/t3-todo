@@ -25,6 +25,10 @@
     @apply btn-block btn my-5 rounded border border-themePrimary-300 bg-transparent font-roboto tracking-wide text-themePrimary-300 hover:bg-themePrimary-400 hover:text-themePrimary-1000;
   }
 
+  .input-nameinput {
+    @apply input border border-themePrimary-300 bg-themePrimary-1100 font-lato text-xl tracking-wide text-themePrimary-100 placeholder-themePrimary-100/75 focus:shadow focus:shadow-themePrimary-200;
+  }
+
   .nav-navitem {
     @apply cursor-pointer px-4 font-roboto text-base tracking-wide hover:bg-themePrimary-300 hover:text-themePrimary-1050;
   }
