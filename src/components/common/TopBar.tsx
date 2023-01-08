@@ -16,7 +16,7 @@ const TopBar: FC<{ avatarUrl: string | undefined | null }> = ({
         onMouseLeave={() => setShowOptionsMenu(false)}>
         <div className='relative mx-auto flex h-full w-full max-w-4xl items-center'>
           {/* logo */}
-          <Link href={'./'}>
+          <Link href={'/'}>
             <span className='ml-4 font-spaceGrotesk text-4xl text-themePrimary-100'>
               T3T
             </span>
@@ -41,13 +41,13 @@ const TopBar: FC<{ avatarUrl: string | undefined | null }> = ({
           {/* Nav options */}
           {showOptionsMenu && (
             <div className='absolute top-12 right-12 w-max rounded-md bg-themePrimary-1050 pt-1 pb-1 outline outline-1 outline-themePrimary-200/50'>
-              <Link href='./new/note'>
+              <Link href='/new/note'>
                 <div className='nav-navitem pt-1 pb-1'>Create Note</div>
               </Link>
-              <Link href='./new/folder'>
+              <Link href='/new/folder'>
                 <div className='nav-navitem py-1'>Create Folder</div>
               </Link>
-              <Link href='./settings'>
+              <Link href='/settings'>
                 <div className='nav-navitem py-1'>Settings</div>
               </Link>
               <div className='nav-navitem pb-1 pt-1' onClick={() => signOut()}>
