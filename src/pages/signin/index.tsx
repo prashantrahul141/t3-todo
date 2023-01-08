@@ -16,7 +16,7 @@ const Signin: NextPage = () => {
     return (
       <>
         <CompHead headTitle='Sign in'></CompHead>
-        <Link href={'./'}>
+        <Link href={'/'}>
           <div className='absolute top-1/4 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 rounded  p-4 text-center sm:w-96'>
             <h6 className='font-lato text-xs tracking-wide text-themePrimary-100'>
               WELCOME TO
