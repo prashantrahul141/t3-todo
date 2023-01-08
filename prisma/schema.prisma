@@ -57,6 +57,7 @@ model VerificationToken {
 model NotesFolder {
     id          String   @id @default(cuid())
     name        String
+    description String?
     createdOn   DateTime @default(now())
     lastUpdated DateTime @default(now())
     User        User?    @relation(fields: [userId], references: [id])
@@ -71,10 +72,19 @@ model Note {
     id            String       @id @default(cuid())
     title         String
     note          String
+    color         String       @default("#ab6ded")
+    tasks         Task[]
     createdOn     DateTime     @default(now())
     lastUpdated   DateTime     @default(now())
     NotesFolder   NotesFolder? @relation(fields: [notesFolderId], references: [id])
     notesFolderId String?
+}
 
-    color String @default("#ab6ded")
+model Task {
+    id     String  @id @default(cuid())
+    text   String
+    done   Boolean @default(false)
+    color  String  @default("#ab6ded")
+    Note   Note?   @relation(fields: [noteId], references: [id])
+    noteId String?
 }
