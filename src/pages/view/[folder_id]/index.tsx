@@ -16,7 +16,7 @@ export const getServerSideProps = async (context: NextPageContext) => {
 };
 
 const ViewFolder: FC<{ folder_id: string }> = ({ folder_id }) => {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
 
   if (status === 'authenticated') {
