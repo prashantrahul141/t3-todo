@@ -25,6 +25,7 @@ module.exports = {
         1050: '#23132c',
         1100: '#1e1026',
       },
+      selectionColor: '#dbbdfc1e',
     },
   },
   plugins: [require('daisyui')],
