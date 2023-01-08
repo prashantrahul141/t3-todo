@@ -7,7 +7,7 @@ const Welcome: NextPage = () => {
     <>
       {/* Top text */}
       <CompHead headTitle='None'></CompHead>
-      <div className='absolute top-1/3 left-1/2 w-max -translate-x-1/2 sm:top-1/4'>
+      <div className='absolute top-1/4 left-1/2 w-max -translate-x-1/2'>
         <span className='float-left font-spaceGrotesk text-6xl tracking-widest text-themePrimary-300 sm:text-8xl sm:tracking-wider'>
           T3 TODO
         </span>
@@ -17,11 +17,18 @@ const Welcome: NextPage = () => {
       </div>
 
       {/* Button */}
-      <Link href='/signin'>
-        <div className='absolute top-2/3 left-1/2 w-max -translate-x-1/2 sm:bottom-1/2'>
-          <button className='btn-signin'>Sign up for free</button>
-        </div>
-      </Link>
+      <div className='absolute top-2/4 left-1/2 flex w-max -translate-x-1/2 gap-5 sm:top-2/3'>
+        <Link href='/signin'>
+          <div className=''>
+            <button className='btn-signin'>Sign up for free</button>
+          </div>
+        </Link>
+        <Link href='/about'>
+          <div className=''>
+            <button className='btn-signin'>Learn more</button>
+          </div>
+        </Link>
+      </div>
     </>
   );
 };
