@@ -5,16 +5,25 @@ import FolderForm from '@components/forms/newfolderform';
 import type { NextPage } from 'next';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import { api } from '@utils/api';
 
 const NewFolder: NextPage = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
+  const mutation = api.folder.create.useMutation();
 
-  const createFolder = (folderName: string, folderColor: string) => {
-    console.log(folderName, folderColor);
+  const createFolder = (
+    folderName: string,
+    folderDesc: string | null = null,
+    folderColor: string
+  ) => {
+    mutation.mutate({ folderName, folderDesc, folderColor });
   };
 
   if (status == 'authenticated') {
+    if (mutation.isSuccess) {
+      router.push(`/view/${mutation.data.folder_id}`);
+    }
     return (
       <>
         <CompHead headTitle='New Folder'></CompHead>
@@ -22,6 +31,7 @@ const NewFolder: NextPage = () => {
         <FolderForm
           titleText='Create New Folder'
           folderName={undefined}
+          folderDesc={undefined}
           folderColor={undefined}
           callBackFunc={createFolder}
           buttonText='Create Folder'></FolderForm>
