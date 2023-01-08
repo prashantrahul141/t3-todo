@@ -4,7 +4,9 @@ import Link from 'next/link';
 import type { FC } from 'react';
 import { useState } from 'react';
 
-const TopBar: FC<{ avatarUrl: string }> = ({ avatarUrl }) => {
+const TopBar: FC<{ avatarUrl: string | undefined | null }> = ({
+  avatarUrl,
+}) => {
   const [showOptionsMenu, setShowOptionsMenu] = useState(false);
 
   return (
@@ -27,7 +29,7 @@ const TopBar: FC<{ avatarUrl: string }> = ({ avatarUrl }) => {
             <div className='avatar'>
               <div className='w-9  rounded-full'>
                 <Image
-                  src={avatarUrl}
+                  src={avatarUrl || '/public/static/defaultavatar.jpg'}
                   alt={'avatar'}
                   width='100'
                   height='100'
