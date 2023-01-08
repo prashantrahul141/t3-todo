@@ -17,7 +17,12 @@ const NewFolder: NextPage = () => {
     folderDesc: string | null = null,
     folderColor: string
   ) => {
-    mutation.mutate({ folderName, folderDesc, folderColor });
+    mutation.mutate({
+      folderName,
+      folderDesc,
+      folderColor,
+      userId: session ? (session.user ? session.user.id : null) : null,
+    });
   };
 
   if (status == 'authenticated') {
