@@ -21,10 +21,7 @@ const Home: NextPage = () => {
     return (
       <>
         <CompHead headTitle='Home'></CompHead>
-        <TopBar
-          avatarUrl={
-            session.user?.image || '/public/static/defaultavatar.jpg'
-          }></TopBar>
+        <TopBar avatarUrl={session.user?.image}></TopBar>
       </>
     );
   }
