@@ -23,4 +23,11 @@ export const folderRouter = createTRPCRouter({
         folder_id: folderCreated.id,
       };
     }),
+
+  list: protectedProcedure.query(async () => {
+    const folders = await prisma.notesFolder.findMany();
+    return {
+      folders,
+    };
+  }),
 });
