@@ -9,6 +9,7 @@ export const folderRouter = createTRPCRouter({
         folderName: z.string(),
         folderDesc: z.string().nullable(),
         folderColor: z.string(),
+        userId: z.string().nullable(),
       })
     )
     .mutation(async ({ input }) => {
@@ -17,6 +18,7 @@ export const folderRouter = createTRPCRouter({
           name: input.folderName,
           description: input.folderDesc,
           color: input.folderColor,
+          userId: input.userId,
         },
       });
       return {
@@ -39,10 +41,11 @@ export const folderRouter = createTRPCRouter({
           id: input.folder_id,
         },
       });
+
       if (foundNote !== null && foundNote.userId == input.userid) {
         return {
           status: 200,
-          ...foundNote,
+          foundNote,
         };
       }
       return {
