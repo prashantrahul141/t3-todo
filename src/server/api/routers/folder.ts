@@ -30,4 +30,23 @@ export const folderRouter = createTRPCRouter({
       folders,
     };
   }),
+
+  get: protectedProcedure
+    .input(z.object({ folder_id: z.string(), userid: z.string().nullable() }))
+    .query(async ({ input }) => {
+      const foundNote = await prisma.notesFolder.findUnique({
+        where: {
+          id: input.folder_id,
+        },
+      });
+      if (foundNote !== null && foundNote.userId == input.userid) {
+        return {
+          status: 200,
+          ...foundNote,
+        };
+      }
+      return {
+        status: 404,
+      };
+    }),
 });
