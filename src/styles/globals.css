@@ -22,7 +22,7 @@
 /*  Custom Components */
 @layer components {
   .btn-signin {
-    @apply btn-block btn my-5 rounded border border-themePrimary-500 bg-transparent font-roboto tracking-wide text-themePrimary-400 hover:bg-themePrimary-500 hover:text-themePrimary-1000;
+    @apply btn-block btn my-5 rounded border border-themePrimary-300 bg-transparent font-roboto tracking-wide text-themePrimary-300 hover:bg-themePrimary-400 hover:text-themePrimary-1000;
   }
 
   .nav-navitem {
