@@ -6,18 +6,25 @@ import { TwitterPicker } from 'react-color';
 const FolderForm: FC<{
   titleText: string;
   folderName: string | undefined;
+  folderDesc: string | undefined;
   folderColor: string | undefined;
-  callBackFunc: (folderName: string, folderColor: string) => void;
+  callBackFunc: (
+    folderName: string,
+    folderDesc: string | null,
+    folderColor: string
+  ) => void;
   buttonText: string;
 }> = ({
   titleText,
   folderName = undefined,
+  folderDesc = undefined,
   folderColor = undefined,
   callBackFunc,
   buttonText,
 }) => {
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [currentFolderName, setCurrentFolderName] = useState('');
+  const [currentFolderDesc, setcurrentFolderDesc] = useState('');
   const [currentColor, setCurrentColor] = useState('#ff6900');
 
   if (folderColor !== undefined) {
@@ -42,6 +49,13 @@ const FolderForm: FC<{
             required
             onChange={(e) => setCurrentFolderName(e.target.value)}
           />
+
+          {/* Folder description */}
+          <textarea
+            className='textarea-descinput my-3 w-full'
+            placeholder='Folder description'
+            value={folderDesc}
+            onChange={(e) => setcurrentFolderDesc(e.target.value)}></textarea>
 
           {/* Color picker */}
           <div className='my-7 flex items-center font-lato sm:my-4'>
@@ -72,7 +86,11 @@ const FolderForm: FC<{
             onClick={(e) => {
               if (currentFolderName.length > 0) {
                 e.preventDefault();
-                callBackFunc(currentFolderName, currentColor);
+                callBackFunc(
+                  currentFolderName,
+                  currentFolderDesc,
+                  currentColor
+                );
               }
             }}
             className='btn-signin'>
