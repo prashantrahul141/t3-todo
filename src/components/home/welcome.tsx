@@ -11,7 +11,7 @@ const Welcome: NextPage = () => {
         <span className='float-left font-spaceGrotesk text-6xl tracking-widest text-themePrimary-300 sm:text-8xl sm:tracking-wider'>
           T3 TODO
         </span>
-        <span className='float-left clear-left pl-2 font-lato text-lg tracking-wider text-themePrimary-100 sm:pl-2.5 sm:text-2xl sm:tracking-widest'>
+        <span className='float-left clear-left pl-2 font-robotoLight text-lg tracking-wider text-themePrimary-100 sm:pl-2.5 sm:text-2xl sm:tracking-widest'>
           The easiest way to write notes
         </span>
       </div>
