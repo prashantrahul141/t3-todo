@@ -15,7 +15,7 @@
 @layer base {
   html,
   body {
-    @apply m-0 bg-themePrimary-1100 p-0;
+    @apply m-0 bg-themePrimary-1100 p-0 selection:bg-selectionColor;
   }
 }
 
