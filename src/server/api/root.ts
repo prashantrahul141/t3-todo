@@ -1,5 +1,6 @@
 import { createTRPCRouter } from './trpc';
 import { folderRouter } from './routers/folder';
+import { noteRouter } from './routers/note';
 
 /**
  * This is the primary router for your server.
@@ -8,6 +9,7 @@ import { folderRouter } from './routers/folder';
  */
 export const appRouter = createTRPCRouter({
   folder: folderRouter,
+  note: noteRouter,
 });
 
 // export type definition of API
