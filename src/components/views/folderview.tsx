@@ -73,7 +73,7 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
     return (
       <>
         <CompHead headTitle='Not Found'></CompHead>
-        <FolderNotFound folder_id={folder_id}></FolderNotFound>
+        <FolderNotFound></FolderNotFound>
         <TopBar avatarUrl={session?.user?.image}></TopBar>
       </>
     );
