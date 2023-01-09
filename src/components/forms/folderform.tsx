@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import type { ColorResult } from 'react-color';
 import { useState } from 'react';
 import { TwitterPicker } from 'react-color';
+import ErrorAlert from '@components/common/ErrorAlert';
 
 const FolderForm: FC<{
   titleText: string;
@@ -26,6 +27,7 @@ const FolderForm: FC<{
   const [currentFolderName, setCurrentFolderName] = useState('');
   const [currentFolderDesc, setcurrentFolderDesc] = useState('');
   const [currentColor, setCurrentColor] = useState('#ff6900');
+  const [showError, setShowError] = useState(false);
 
   if (folderColor !== undefined) {
     setCurrentColor(folderColor);
@@ -33,7 +35,7 @@ const FolderForm: FC<{
 
   return (
     <>
-      <form>
+      <form onChange={() => setShowError(false)}>
         <div className='absolute top-1/4 left-1/2 w-full max-w-lg -translate-x-1/2 p-2 '>
           {/* Title */}
           <p className='mb-12 text-center font-spaceGrotesk text-3xl text-themePrimary-100'>
@@ -86,13 +88,15 @@ const FolderForm: FC<{
           <button
             type='submit'
             onClick={(e) => {
+              e.preventDefault();
               if (currentFolderName.length > 0) {
-                e.preventDefault();
                 callBackFunc(
                   currentFolderName,
                   currentFolderDesc,
                   currentColor
                 );
+              } else {
+                setShowError(true);
               }
             }}
             className='btn-signin'>
@@ -100,6 +104,7 @@ const FolderForm: FC<{
           </button>
         </div>
       </form>
+      {showError && <ErrorAlert text='You missed something!'></ErrorAlert>}
     </>
   );
 };
