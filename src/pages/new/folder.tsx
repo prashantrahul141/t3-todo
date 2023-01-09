@@ -1,7 +1,7 @@
 import CompHead from '@components/common/CompHead';
 import Loading from '@components/common/Loading';
 import TopBar from '@components/common/TopBar';
-import FolderForm from '@components/forms/newfolderform';
+import FolderForm from '@components/forms/folderform';
 import type { NextPage } from 'next';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
