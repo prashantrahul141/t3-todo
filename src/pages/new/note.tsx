@@ -19,15 +19,16 @@ const NewNote: NextPage = () => {
     noteFolderId: string,
     noteColor: string
   ) => {
-    const createdNoteId = await mutation.mutateAsync({
+    mutation.mutateAsync({
       folderId: noteFolderId,
       noteName: noteName,
       color: noteColor,
       userId: session?.user?.id || '#',
     });
+
     if (mutation.isSuccess) {
       // redirect to noteview if mutation was a success
-      router.push(`/view/${noteFolderId}/${createdNoteId?.newNoteId}`);
+      router.push(`/view/${noteFolderId}/${mutation.data?.newNoteId}`);
     }
   };
 
