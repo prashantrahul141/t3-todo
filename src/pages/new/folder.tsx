@@ -8,16 +8,17 @@ import { useRouter } from 'next/router';
 import { api } from '@utils/api';
 
 const NewFolder: NextPage = () => {
+  // page for creating new folders
   const { data: session, status } = useSession();
   const router = useRouter();
   const mutation = api.folder.create.useMutation();
 
-  const createFolder = (
+  const createFolder = async (
     folderName: string,
     folderDesc: string | null = null,
     folderColor: string
   ) => {
-    mutation.mutate({
+    await mutation.mutateAsync({
       folderName,
       folderDesc,
       folderColor,
@@ -27,6 +28,7 @@ const NewFolder: NextPage = () => {
 
   if (status == 'authenticated') {
     if (mutation.isSuccess) {
+      // if adding folder was successful redirect to viewfolder.
       router.push(`/view/${mutation.data.folder_id}`);
     }
     return (
@@ -43,6 +45,7 @@ const NewFolder: NextPage = () => {
       </>
     );
   } else if (status == 'unauthenticated') {
+    // redirect if not logged in
     router.push('/signin');
   }
 
