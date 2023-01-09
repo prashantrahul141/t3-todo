@@ -18,7 +18,7 @@ export const folderRouter = createTRPCRouter({
           name: input.folderName,
           description: input.folderDesc,
           color: input.folderColor,
-          userId: input.userId,
+          userId: input.userId || '#',
         },
       });
       return {
@@ -36,16 +36,19 @@ export const folderRouter = createTRPCRouter({
   get: protectedProcedure
     .input(z.object({ folder_id: z.string(), userid: z.string().nullable() }))
     .query(async ({ input }) => {
-      const foundNote = await prisma.notesFolder.findUnique({
+      const foundFolder = await prisma.notesFolder.findUnique({
         where: {
           id: input.folder_id,
         },
+        include: {
+          Notes: true,
+        },
       });
 
-      if (foundNote !== null && foundNote.userId == input.userid) {
+      if (foundFolder !== null && foundFolder.userId == input.userid) {
         return {
           status: 200,
-          foundNote,
+          foundFolder: foundFolder,
         };
       }
       return {
