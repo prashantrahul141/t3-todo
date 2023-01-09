@@ -20,6 +20,7 @@ const ViewNote: FC<{ folder_id: string; note_id: string }> = ({
   folder_id,
   note_id,
 }) => {
+  //  page to view indiviual note
   const { status } = useSession();
   const router = useRouter();
 

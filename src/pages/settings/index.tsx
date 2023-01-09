@@ -6,6 +6,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
 const Settings: NextPage = () => {
+  // user settings page
   const { data: session, status } = useSession();
   const router = useRouter();
 

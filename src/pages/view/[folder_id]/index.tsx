@@ -16,6 +16,7 @@ export const getServerSideProps = async (context: NextPageContext) => {
 };
 
 const ViewFolder: FC<{ folder_id: string }> = ({ folder_id }) => {
+  // page to view indiviual folder
   const { status } = useSession();
   const router = useRouter();
 

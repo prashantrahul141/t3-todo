@@ -8,6 +8,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
 const NewNote: NextPage = () => {
+  // page for creating new notes
   const { data: session, status } = useSession();
   const router = useRouter();
 
@@ -24,8 +25,10 @@ const NewNote: NextPage = () => {
       color: noteColor,
       userId: session?.user?.id || '#',
     });
-
-    router.push(`/view/${noteFolderId}/${createdNoteId?.newNoteId}`);
+    if (mutation.isSuccess) {
+      // redirect to noteview if mutation was a success
+      router.push(`/view/${noteFolderId}/${createdNoteId?.newNoteId}`);
+    }
   };
 
   if (status == 'authenticated') {
@@ -43,6 +46,7 @@ const NewNote: NextPage = () => {
       </>
     );
   } else if (status == 'unauthenticated') {
+    // redirect if not logged in
     router.push('/signin');
   }
 

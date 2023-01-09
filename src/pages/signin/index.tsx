@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import Loading from '@components/common/Loading';
 
 const Signin: NextPage = () => {
+  // user sign in page
   const { status } = useSession();
   const router = useRouter();
 
@@ -15,6 +16,7 @@ const Signin: NextPage = () => {
   } else if (status == 'unauthenticated') {
     return (
       <>
+        {/* welcome text */}
         <CompHead headTitle='Sign in'></CompHead>
         <Link href={'/'}>
           <div className='absolute top-1/4 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 rounded  p-4 text-center sm:w-96'>
@@ -26,6 +28,8 @@ const Signin: NextPage = () => {
             </h2>
           </div>
         </Link>
+
+        {/* sign in form */}
         <CompSigninForm></CompSigninForm>
       </>
     );
