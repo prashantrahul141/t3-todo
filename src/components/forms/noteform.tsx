@@ -99,7 +99,7 @@ const NoteForm: FC<{
               Choose a Note Color &nbsp;
             </span>
             <button
-              className={`bg-transparen ml-16 h-10 w-10 rounded-lg `}
+              className={`ml-16 h-10 w-10 rounded-lg bg-transparent`}
               style={{ backgroundColor: currentColor }}
               onClick={(e) => {
                 e.preventDefault();
