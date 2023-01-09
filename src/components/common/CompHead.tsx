@@ -4,6 +4,7 @@ import type { FC } from 'react';
 const CompHead: FC<{ headTitle: string | undefined }> = ({
   headTitle = undefined,
 }) => {
+  // Head component, use to give head title
   return (
     <Head>
       {headTitle === undefined && <title>{`Todo`}</title>}

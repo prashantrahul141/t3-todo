@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { FC } from 'react';
 
 const NoteNotFound: FC = () => {
+  // note not found component
   return (
     <>
       <div className='absolute top-1/3 left-1/2 -translate-x-1/2 text-center'>

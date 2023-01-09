@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 
 const Welcome: NextPage = () => {
+  //  landing page for non logged in users
   return (
     <>
       {/* Top text */}

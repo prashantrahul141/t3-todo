@@ -25,6 +25,8 @@ const NoteForm: FC<{
   callBackFunc,
   buttonText,
 }) => {
+  // note form, use for creating and editing note
+
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [currentNoteName, setCurrentNoteName] = useState('');
   const [currentNoteFolderName, setCurrentNoteFolderName] = useState({

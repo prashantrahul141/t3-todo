@@ -12,12 +12,14 @@ const Home: NextPage = () => {
   if (status == 'unauthenticated') {
     return (
       <>
+        {/* landing page for non logged in users */}
         <Welcome></Welcome>
       </>
     );
   } else if (status == 'authenticated') {
     return (
       <>
+        {/* folders view for logged in users */}
         <CompHead headTitle='Home'></CompHead>
         <TopBar avatarUrl={session.user?.image}></TopBar>
         <FoldersView></FoldersView>

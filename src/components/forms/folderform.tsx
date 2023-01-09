@@ -32,7 +32,7 @@ const FolderForm: FC<{
   if (folderColor !== undefined) {
     setCurrentColor(folderColor);
   }
-
+  // folder form, use for creating and editing folders
   return (
     <>
       <form onChange={() => setShowError(false)}>

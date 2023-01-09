@@ -8,7 +8,7 @@ const TopBar: FC<{ avatarUrl: string | undefined | null }> = ({
   avatarUrl,
 }) => {
   const [showOptionsMenu, setShowOptionsMenu] = useState(false);
-
+  //  Top navigation bar
   return (
     <>
       <div

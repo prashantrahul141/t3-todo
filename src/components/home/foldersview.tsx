@@ -4,6 +4,8 @@ import Link from 'next/link';
 
 const FoldersView: FC = () => {
   const folders = api.folder.list.useQuery();
+
+  // view folders when user is logged in
   return (
     <>
       <div className='absolute top-1/4 left-1/2 grid w-full max-w-4xl -translate-x-1/2 grid-cols-FolderCardsSm gap-6 p-4 sm:grid-cols-FolderCards'>

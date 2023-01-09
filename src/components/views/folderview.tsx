@@ -20,6 +20,8 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
       <>
         <CompHead headTitle={foundFolder.data.foundFolder?.name}></CompHead>
         <TopBar avatarUrl={session?.user?.image}></TopBar>
+
+        {/* Bread Crumb */}
         <div className='absolute top-28 left-1/2 w-full max-w-3xl -translate-x-1/2 px-2 sm:top-1/4'>
           <div className='top-0'>
             <span className='font-spaceGrotesk text-xl tracking-wide text-themePrimary-100 sm:text-3xl'>
@@ -32,6 +34,8 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
               {foundFolder.data.foundFolder?.name}
             </span>
           </div>
+
+          {/* Notes */}
           <div className='mx-2 my-4 mt-6  border border-themePrimary-100/0'>
             {foundFolder.data.foundFolder?.Notes.map((eachNote) => {
               return (
@@ -59,6 +63,7 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
         </div>
         {foundFolder.data.foundFolder?.Notes.length === 0 && (
           <>
+            {/* If no note is present in the folder */}
             <div className='absolute top-2/4 left-1/2 -translate-x-1/2 text-center'>
               <div className='mb-8'>
                 <p className='font-lato text-lg text-themePrimary-100'>
@@ -78,6 +83,7 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
   } else if (foundFolder.data?.status === 404) {
     return (
       <>
+        {/* note not found */}
         <CompHead headTitle='Not Found'></CompHead>
         <FolderNotFound></FolderNotFound>
         <TopBar avatarUrl={session?.user?.image}></TopBar>
