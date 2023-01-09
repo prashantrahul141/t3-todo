@@ -1,4 +1,5 @@
 import CompHead from '@components/common/CompHead';
+import Loading from '@components/common/Loading';
 import TopBar from '@components/common/TopBar';
 import FolderNotFound from '@components/errors/foldernotfound';
 import { api } from '@utils/api';
@@ -20,14 +21,17 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
         <TopBar avatarUrl={session?.user?.image}></TopBar>
       </>
     );
+  } else if (foundFolder.data?.status === 404) {
+    return (
+      <>
+        <CompHead headTitle='Not Found'></CompHead>
+        <FolderNotFound folder_id={folder_id}></FolderNotFound>
+        <TopBar avatarUrl={session?.user?.image}></TopBar>
+      </>
+    );
   }
-  return (
-    <>
-      <CompHead headTitle='Not Found'></CompHead>
-      <FolderNotFound folder_id={folder_id}></FolderNotFound>
-      <TopBar avatarUrl={session?.user?.image}></TopBar>
-    </>
-  );
+
+  return <Loading></Loading>;
 };
 
 export default FolderView;
