@@ -36,7 +36,7 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
           </div>
 
           {/* Notes */}
-          <div className='mx-2 my-4 mt-6  border border-themePrimary-100/0'>
+          <div className='mx-2 my-4 mt-6'>
             {foundFolder.data.foundFolder?.Notes.map((eachNote) => {
               return (
                 <Link
