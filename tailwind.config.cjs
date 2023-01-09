@@ -8,6 +8,9 @@ module.exports = {
         FolderCards: 'repeat(auto-fit, minmax(150px, 1fr))',
         FolderCardsSm: 'repeat(auto-fit, minmax(80px, 1fr))',
       },
+      dropShadow: {
+        noteItems: '0 10px 10px rgb(195, 147, 246, .4)',
+      },
     },
     fontFamily: {
       lato: ['Lato'],
