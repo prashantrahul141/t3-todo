@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { useState } from 'react';
 
 const TaskForm: FC<{
-  callback: (text: string) => void;
+  callback: (text: string) => Promise<void>;
 }> = ({ callback }) => {
   // add task form component
   const [taskText, setTaskText] = useState('');
@@ -26,12 +26,12 @@ const TaskForm: FC<{
           className='btn-signin m-0 w-36'
           id='addtask-btn'
           disabled={disableButton}
-          onClick={(e) => {
+          onClick={async (e) => {
             e.preventDefault();
             (
               document.getElementById('taskform-inputbox') as HTMLInputElement
             ).value = '';
-            callback(taskText);
+            await callback(taskText);
           }}>
           Add Task
         </button>
