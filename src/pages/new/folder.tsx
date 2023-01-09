@@ -32,6 +32,7 @@ const NewFolder: NextPage = () => {
     return (
       <>
         <CompHead headTitle='New Folder'></CompHead>
+        <TopBar avatarUrl={session.user?.image}></TopBar>
         <FolderForm
           titleText='Create New Folder'
           folderName={undefined}
@@ -39,7 +40,6 @@ const NewFolder: NextPage = () => {
           folderColor={undefined}
           callBackFunc={createFolder}
           buttonText='Create Folder'></FolderForm>
-        <TopBar avatarUrl={session.user?.image}></TopBar>
       </>
     );
   } else if (status == 'unauthenticated') {

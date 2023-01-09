@@ -32,6 +32,7 @@ const NewNote: NextPage = () => {
     return (
       <>
         <CompHead headTitle='New Note'></CompHead>
+        <TopBar avatarUrl={session.user?.image}></TopBar>
         <NoteForm
           titleText='Create New Note'
           noteName={undefined}
@@ -39,7 +40,6 @@ const NewNote: NextPage = () => {
           noteColor={undefined}
           callBackFunc={createNote}
           buttonText='Create Note'></NoteForm>
-        <TopBar avatarUrl={session.user?.image}></TopBar>
       </>
     );
   } else if (status == 'unauthenticated') {

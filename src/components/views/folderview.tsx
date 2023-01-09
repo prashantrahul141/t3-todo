@@ -19,6 +19,7 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
     return (
       <>
         <CompHead headTitle={foundFolder.data.foundFolder?.name}></CompHead>
+        <TopBar avatarUrl={session?.user?.image}></TopBar>
         <div className='absolute top-28 left-1/2 w-full max-w-3xl -translate-x-1/2 px-2 sm:top-1/4'>
           <div className='top-0'>
             <span className='font-spaceGrotesk text-2xl tracking-wide text-themePrimary-100 sm:text-3xl'>
@@ -66,7 +67,6 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
             </div>
           </>
         )}
-        <TopBar avatarUrl={session?.user?.image}></TopBar>
       </>
     );
   } else if (foundFolder.data?.status === 404) {
