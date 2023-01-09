@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 const ErrorAlert: FC<{ text: string }> = ({ text }) => {
   return (
-    <div className='alert alert-error absolute bottom-12 left-1/2 w-full max-w-sm -translate-x-1/2 shadow-lg'>
+    <div className='alert alert-error absolute bottom-12 left-1/2 w-full max-w-sm -translate-x-1/2 rounded shadow-lg'>
       <div>
         <svg
           xmlns='http://www.w3.org/2000/svg'
