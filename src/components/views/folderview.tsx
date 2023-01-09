@@ -19,7 +19,7 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
     return (
       <>
         <CompHead headTitle={foundFolder.data.foundFolder?.name}></CompHead>
-        <div className='absolute top-32 left-1/2 w-full max-w-3xl -translate-x-1/2 px-2 sm:top-1/4'>
+        <div className='absolute top-28 left-1/2 w-full max-w-3xl -translate-x-1/2 px-2 sm:top-1/4'>
           <div className='top-0'>
             <span className='font-spaceGrotesk text-2xl tracking-wide text-themePrimary-100 sm:text-3xl'>
               {foundFolder.data.foundFolder?.name}
@@ -31,8 +31,8 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
                 <Link
                   key={eachNote.id}
                   href={`/view/${eachNote.notesFolderId}/${eachNote.id}`}>
-                  <div className='my-2 table h-12 w-full cursor-pointer rounded border border-themePrimary-300/20  bg-themePrimary-1100 px-4 text-themePrimary-100/70 transition-all duration-200 hover:scale-[1.01] hover:border-themePrimary-300/25 hover:bg-themePrimary-300/5 hover:text-themePrimary-100 hover:shadow-themePrimary-300 hover:drop-shadow-noteItems'>
-                    {/* <p className='table-cell align-middle'>
+                  <div className='my-2 inline-grid h-12 w-full cursor-pointer grid-cols-NotesListItems gap-2 rounded border border-themePrimary-300/20 bg-themePrimary-1100  text-themePrimary-100/70 transition-all duration-200 hover:scale-[1.01] hover:border-themePrimary-300/25 hover:bg-themePrimary-300/5 hover:text-themePrimary-100 hover:shadow-themePrimary-300 hover:drop-shadow-noteItems'>
+                    <div className='flex items-center justify-center'>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill={eachNote.color}
@@ -40,8 +40,8 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
                         viewBox='0 0 16 16'>
                         <path d='M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM4.5 9a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM4 10.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 1 0-1h4a.5.5 0 0 1 0 1h-4z' />{' '}
                       </svg>
-                    </p> */}
-                    <p className='table-cell align-middle  font-lato tracking-wide'>
+                    </div>
+                    <p className='flex items-center font-lato tracking-wide'>
                       {eachNote.title}
                     </p>
                   </div>
@@ -50,6 +50,22 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
             })}
           </div>
         </div>
+        {foundFolder.data.foundFolder?.Notes.length === 0 && (
+          <>
+            <div className='absolute top-2/4 left-1/2 -translate-x-1/2 text-center'>
+              <div className='mb-8'>
+                <p className='font-lato text-lg text-themePrimary-100'>
+                  There are no notes in this folder
+                </p>
+              </div>
+              <div>
+                <Link href='/new/note'>
+                  <button className='btn-signin w-max px-4'>Create one!</button>
+                </Link>
+              </div>
+            </div>
+          </>
+        )}
         <TopBar avatarUrl={session?.user?.image}></TopBar>
       </>
     );
