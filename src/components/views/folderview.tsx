@@ -18,15 +18,14 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
       <>
         <CompHead headTitle={foundFolder.data.foundNote?.name}></CompHead>
         <TopBar avatarUrl={session?.user?.image}></TopBar>
-        {foundFolder.data.foundNote?.name}
       </>
     );
   }
   return (
     <>
       <CompHead headTitle='Not Found'></CompHead>
-      <TopBar avatarUrl={session?.user?.image}></TopBar>
       <FolderNotFound folder_id={folder_id}></FolderNotFound>
+      <TopBar avatarUrl={session?.user?.image}></TopBar>
     </>
   );
 };

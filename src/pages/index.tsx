@@ -19,8 +19,8 @@ const Home: NextPage = () => {
     return (
       <>
         <CompHead headTitle='Home'></CompHead>
-        <TopBar avatarUrl={session.user?.image}></TopBar>
         <FoldersView></FoldersView>
+        <TopBar avatarUrl={session.user?.image}></TopBar>
       </>
     );
   }
