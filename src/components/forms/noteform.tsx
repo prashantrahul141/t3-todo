@@ -64,7 +64,7 @@ const NoteForm: FC<{
           />
 
           {/* Choose Folder */}
-          <div className='my-3 flex w-full border border-themePrimary-100/0'>
+          <div className='my-3 flex w-full'>
             <select
               required
               className='select-folder mr-3 flex-auto font-lato text-lg'
