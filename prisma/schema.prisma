@@ -71,7 +71,6 @@ model NotesFolder {
 model Note {
     id            String       @id @default(cuid())
     title         String
-    note          String
     color         String       @default("#ab6ded")
     tasks         Task[]
     createdOn     DateTime     @default(now())
