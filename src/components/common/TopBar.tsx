@@ -47,6 +47,9 @@ const TopBar: FC<{ avatarUrl: string | undefined | null }> = ({
               <Link href='/new/folder'>
                 <div className='nav-navitem py-1'>Create Folder</div>
               </Link>
+              <Link href='/'>
+                <div className='nav-navitem py-1'>Folders</div>
+              </Link>
               <Link href='/settings'>
                 <div className='nav-navitem py-1'>Settings</div>
               </Link>
