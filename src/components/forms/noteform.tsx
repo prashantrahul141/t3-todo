@@ -119,13 +119,13 @@ const NoteForm: FC<{
           {/* Submit button */}
           <button
             type='submit'
-            onClick={(e) => {
+            onClick={async (e) => {
               e.preventDefault();
               if (
                 currentNoteName.length > 0 &&
                 currentNoteFolderName.seleteted
               ) {
-                callBackFunc(
+                await callBackFunc(
                   currentNoteName,
                   currentNoteFolderName.value,
                   currentColor
