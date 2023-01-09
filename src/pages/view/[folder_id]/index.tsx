@@ -10,7 +10,7 @@ export const getServerSideProps = async (context: NextPageContext) => {
   const { folder_id } = query;
   return {
     props: {
-      folder_id,
+      folder_id: folder_id || '#',
     },
   };
 };
