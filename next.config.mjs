@@ -37,6 +37,11 @@ const config = {
         destination: '/new/note',
         permanent: true,
       },
+      {
+        source: '/view',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 };
