@@ -12,7 +12,7 @@ export const noteRouter = createTRPCRouter({
       })
     )
     .query(async ({ input }) => {
-      const foundNote = await prisma.note.findUnique({
+      const foundNoteData = await prisma.note.findUnique({
         where: {
           id: input.note_id,
         },
@@ -27,13 +27,13 @@ export const noteRouter = createTRPCRouter({
       });
 
       if (
-        foundNote !== null &&
-        foundNote.NotesFolder?.id === input.folder_id &&
-        foundNote.NotesFolder.userId === input.userid
+        foundNoteData !== null &&
+        foundNoteData.NotesFolder?.id === input.folder_id &&
+        foundNoteData.NotesFolder.userId === input.userid
       ) {
         return {
           status: 200,
-          foundNote: foundNote,
+          foundNoteData: foundNoteData,
         };
       }
 
