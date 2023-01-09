@@ -47,6 +47,8 @@ const FolderForm: FC<{
             className='input-nameinput my-3 w-full'
             value={folderName}
             required
+            minLength={2}
+            maxLength={25}
             onChange={(e) => setCurrentFolderName(e.target.value)}
           />
 
