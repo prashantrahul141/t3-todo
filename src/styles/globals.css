@@ -26,14 +26,22 @@
   }
 
   .input-nameinput {
-    @apply input border border-themePrimary-300 bg-themePrimary-1100 font-lato text-xl tracking-wide text-themePrimary-100 placeholder-themePrimary-100/75 focus:shadow focus:shadow-themePrimary-200;
+    @apply input rounded border border-themePrimary-300 bg-themePrimary-1100 font-lato text-lg tracking-wide text-themePrimary-100 placeholder-themePrimary-100/75 focus:shadow focus:shadow-themePrimary-200;
   }
 
   .textarea-descinput {
-    @apply textarea border border-themePrimary-300 bg-themePrimary-1100 font-lato text-xl tracking-wide text-themePrimary-100 placeholder-themePrimary-100/75 focus:shadow focus:shadow-themePrimary-200;
+    @apply textarea rounded border border-themePrimary-300 bg-themePrimary-1100 font-lato text-lg tracking-wide text-themePrimary-100 placeholder-themePrimary-100/75 focus:shadow focus:shadow-themePrimary-200;
   }
 
   .nav-navitem {
-    @apply cursor-pointer px-4 font-roboto text-base tracking-wide hover:bg-themePrimary-300 hover:text-themePrimary-1050;
+    @apply cursor-pointer rounded px-4 font-roboto text-base tracking-wide hover:bg-themePrimary-300 hover:text-themePrimary-1050;
+  }
+
+  .select-folder {
+    @apply select rounded border-themePrimary-300 bg-transparent focus:shadow focus:shadow-themePrimary-200;
+  }
+
+  .select-option {
+    @apply bg-themePrimary-1100 font-lato text-base checked:bg-themePrimary-300 checked:text-themePrimary-1050;
   }
 }
