@@ -32,7 +32,7 @@ const NoteView: FC<{ folder_id: string; note_id: string }> = ({
     }
     //for first time rendering list
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [foundTasks.isFetched]);
 
   const createTaskMutation = api.task.create.useMutation();
 
@@ -58,10 +58,10 @@ const NoteView: FC<{ folder_id: string; note_id: string }> = ({
           <div className='absolute top-28 left-1/2 w-full max-w-3xl -translate-x-1/2 px-2 sm:top-1/4'>
             {/* bread Crumb */}
             <div className='top-0'>
-              <span className='font-spaceGrotesk text-xl tracking-wide text-themePrimary-100 sm:text-3xl'>
+              <span className='font-spaceGrotesk text-lg tracking-wide text-themePrimary-100 sm:text-xl'>
                 <Link
                   href='/'
-                  className='text-3xl hover:text-themePrimary-300 sm:text-4xl'>
+                  className='text-3xl hover:text-themePrimary-300 sm:text-3xl'>
                   ⌂
                 </Link>
                 &nbsp;/&nbsp;
