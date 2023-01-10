@@ -42,7 +42,7 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
                 <Link
                   key={eachNote.id}
                   href={`/view/${eachNote.notesFolderId}/${eachNote.id}`}>
-                  <div className='my-2 inline-grid h-12 w-full cursor-pointer grid-cols-NotesListItems gap-2 rounded border border-themePrimary-300/20 bg-themePrimary-1100  text-themePrimary-100/70 transition-all duration-200 hover:scale-[1.01] hover:border-themePrimary-300/25 hover:bg-themePrimary-300/5 hover:text-themePrimary-100 hover:shadow-themePrimary-300 hover:drop-shadow-noteItems'>
+                  <div className='my-2 inline-grid h-12 w-full cursor-pointer grid-cols-NotesListItems gap-2 rounded border border-themePrimary-500/20 bg-themePrimary-500/5  text-themePrimary-100/70 transition-all duration-200 hover:scale-[1.01] hover:border-themePrimary-300/25 hover:bg-themePrimary-300/5 hover:text-themePrimary-100 hover:shadow-themePrimary-300 hover:drop-shadow-noteItems'>
                     <div className='flex items-center justify-center'>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'

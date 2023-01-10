@@ -22,7 +22,7 @@ const EachTask: FC<{ eachTask: Task }> = ({ eachTask }) => {
   return (
     <div
       onClick={onStateChange}
-      className={`my-2 inline-grid h-12 w-11/12 cursor-pointer select-none grid-cols-NotesListItems  gap-2 rounded border border-themePrimary-300/20 bg-themePrimary-1100 transition-all duration-200 hover:scale-[1.01] hover:border-themePrimary-300/25 hover:bg-themePrimary-300/5  ${
+      className={`my-2 inline-grid h-12 w-full cursor-pointer select-none grid-cols-NotesListItems  gap-2 rounded border border-themePrimary-300/20 bg-themePrimary-1100 bg-themePrimary-500/5 text-themePrimary-100/70 transition-all duration-200 hover:scale-[1.01] hover:border-themePrimary-300/25  hover:bg-themePrimary-300/5 hover:text-themePrimary-100 hover:shadow-themePrimary-300 hover:drop-shadow-noteItems ${
         taskDone
           ? 'hover:text-themePrimary-100/60'
           : 'hover:text-themePrimary-100'

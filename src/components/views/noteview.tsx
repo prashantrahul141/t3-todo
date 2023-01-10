@@ -55,7 +55,7 @@ const NoteView: FC<{ folder_id: string; note_id: string }> = ({
           <CompHead
             headTitle={foundTasks?.data.foundNoteData?.title}></CompHead>
           <TopBar avatarUrl={session?.user?.image}></TopBar>
-          <div className='absolute top-28 left-1/2 w-full max-w-3xl -translate-x-1/2 px-2 sm:top-1/4'>
+          <div className='absolute top-28 left-1/2 w-full max-w-3xl  -translate-x-1/2 px-2 sm:top-1/4'>
             {/* bread Crumb */}
             <div className='top-0'>
               <span className='font-spaceGrotesk text-lg tracking-wide text-themePrimary-100 sm:text-xl'>
@@ -76,7 +76,7 @@ const NoteView: FC<{ folder_id: string; note_id: string }> = ({
             </div>
 
             {/* tasks */}
-            <div className='mx-2 my-4 mt-6 w-full'>
+            <div className='mr-2 mt-6 w-full'>
               <TaskForm callback={taskCreateCallBackFun}></TaskForm>
               <div>
                 {taskList.map((eachTask) => {

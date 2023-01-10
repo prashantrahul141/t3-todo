@@ -40,7 +40,7 @@ const TopBar: FC<{ avatarUrl: string | undefined | null }> = ({
 
           {/* Nav options */}
           {showOptionsMenu && (
-            <div className='absolute top-12 right-12 w-max rounded-md bg-themePrimary-1050 pt-1 pb-1 shadow-lg shadow-themePrimary-100/10  outline outline-1 outline-themePrimary-200/50'>
+            <div className='nav-background-gradient absolute top-12 right-12 w-max rounded-md  pt-1 pb-1 shadow-lg shadow-themePrimary-500/10 outline outline-1  outline-themePrimary-200/40'>
               <Link href='/new/note'>
                 <div className='nav-navitem pt-1 pb-1'>Create Note</div>
               </Link>
