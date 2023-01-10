@@ -34,6 +34,20 @@ const FoldersView: FC = () => {
               </div>
             );
           })}
+        {folders.isSuccess && folders.data.folders.length <= 0 && (
+          <>
+            <div className='absolute top-1/3 left-1/2 w-max -translate-x-1/2 sm:top-1/2'>
+              <div className='mb-2 w-full font-lato text-xl'>
+                <span>You haven&apos;t created any folders yet</span>
+              </div>
+              <div className='w-full text-center'>
+                <Link href='/new/folder'>
+                  <button className='btn-signin w-max px-8'>CREATE ONE!</button>
+                </Link>
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </>
   );
