@@ -36,6 +36,7 @@ const TopBar: FC<{ avatarUrl: string | undefined | null }> = ({
                 />
               </div>
             </div>
+            <span className='text-xs'>&#9660;</span>
           </button>
 
           {/* Nav options */}
