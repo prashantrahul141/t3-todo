@@ -51,17 +51,17 @@ const About: NextPage = () => {
         <div className='about-question'>
           <p className='about-question-title'>How to use it?</p>
           <span className='about-question-span'>
-            You can create folders, also choose a custom folder color while
-            creating it, then you add notes in these folders, whose&apos;s
-            custom color can also me choosen, then you can add different tasks
-            in a note, you can mark them done by clicking them or unmark them by
-            clicking them again.
+            You can create folders, and choose a custom folder colors while
+            creating it, and then you add notes in these folders, whose custom
+            colors can also be choosen. You can add different tasks in a note
+            and mark them done by clicking them or unmark them by clicking them
+            again.
           </span>
         </div>
         <div className='about-question'>
           <p className='about-question-title'>What is the T3 Stack?</p>
           <span className='about-question-span'>
-            Its a collection of js/ts web frameworks to create web apps.&nbsp;
+            Its a collection of js/ts web frameworks to create web apps,&nbsp;
             <Link
               className='link-text-high'
               href='https://create.t3.gg/'
