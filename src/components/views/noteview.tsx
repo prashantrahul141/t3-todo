@@ -46,9 +46,7 @@ const NoteView: FC<{ folder_id: string; note_id: string }> = ({
           text: text,
         });
         if (createdTask?.createdTask !== undefined) {
-          console.log('adding');
           setTaskList([...taskList, createdTask.createdTask]);
-          console.log('added');
         }
       };
 
