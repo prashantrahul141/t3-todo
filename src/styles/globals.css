@@ -34,7 +34,7 @@
   }
 
   .textarea-descinput {
-    @apply textarea rounded border border-themePrimary-300 bg-themePrimary-1100 font-lato text-lg tracking-wide text-themePrimary-100 placeholder-themePrimary-100/75 focus:shadow focus:shadow-themePrimary-200;
+    @apply textarea rounded border border-themePrimary-500 bg-themePrimary-400/5 font-lato text-lg tracking-wide text-themePrimary-100 placeholder-themePrimary-100/30 focus:border-themePrimary-300 focus:shadow focus:shadow-themePrimary-200;
   }
 
   .nav-background-gradient {
