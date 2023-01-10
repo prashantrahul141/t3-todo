@@ -36,7 +36,7 @@
   }
 
   .nav-background-gradient {
-    @apply bg-gradient-to-tr from-themePrimary-900/50 to-themePrimary-800/30;
+    @apply bg-gradient-to-tr from-themePrimary-1000/[.85] to-themePrimary-900/[.85];
   }
 
   .nav-navitem {
