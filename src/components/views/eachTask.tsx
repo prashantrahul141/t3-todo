@@ -22,11 +22,15 @@ const EachTask: FC<{ eachTask: Task }> = ({ eachTask }) => {
   return (
     <div
       onClick={onStateChange}
-      className='my-2 inline-grid h-12 w-11/12 cursor-pointer select-none grid-cols-NotesListItems  gap-2 rounded border border-themePrimary-300/20 bg-themePrimary-1100  text-themePrimary-100/70 transition-all duration-200 hover:scale-[1.01] hover:border-themePrimary-300/25 hover:bg-themePrimary-300/5 hover:text-themePrimary-100 hover:shadow-themePrimary-300 hover:drop-shadow-noteItems'>
-      <div className='flex items-center justify-center'>
+      className={`my-2 inline-grid h-12 w-11/12 cursor-pointer select-none grid-cols-NotesListItems  gap-2 rounded border border-themePrimary-300/20 bg-themePrimary-1100 transition-all duration-200 hover:scale-[1.01] hover:border-themePrimary-300/25 hover:bg-themePrimary-300/5  ${
+        taskDone
+          ? 'hover:text-themePrimary-100/60'
+          : 'hover:text-themePrimary-100'
+      } ${taskDone ? 'text-themePrimary-100/40' : 'text-themePrimary-100/90'}`}>
+      <div className={`flex items-center justify-center`}>
         {taskDone && (
           <svg
-            className='h-7 w-7 fill-themePrimary-300'
+            className='h-7 w-7 fill-themePrimary-300/40'
             viewBox='0 0 24 24'
             xmlns='http://www.w3.org/2000/svg'>
             <g data-name='Layer 2'>
@@ -51,7 +55,10 @@ const EachTask: FC<{ eachTask: Task }> = ({ eachTask }) => {
           </svg>
         )}
       </div>
-      <p className='flex items-center font-lato tracking-wide'>
+      <p
+        className={`flex items-center font-lato tracking-wide ${
+          taskDone ? 'line-through' : ''
+        }`}>
         {eachTask.text}
       </p>
     </div>
