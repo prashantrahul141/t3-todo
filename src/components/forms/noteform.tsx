@@ -67,7 +67,7 @@ const NoteForm: FC<{
           <div className='my-3 flex w-full'>
             <select
               required
-              className='select-folder mr-3 flex-auto font-lato text-lg'
+              className='select-folder mr-3 flex-auto font-lato text-base tracking-wider'
               defaultValue={noteFolderName ? noteFolderName : 'Pick a folder'}
               onChange={(e) =>
                 setCurrentNoteFolderName({
