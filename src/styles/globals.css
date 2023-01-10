@@ -21,6 +21,10 @@
 
 /*  Custom Components */
 @layer components {
+  .background-gradient {
+    @apply bg-gradient-to-tr from-themePrimary-1100 via-themePrimary-1050  to-themePrimary-900;
+  }
+
   .btn-signin {
     @apply btn-block btn my-5 rounded border border-themePrimary-300 bg-transparent font-roboto tracking-wide text-themePrimary-300 hover:bg-themePrimary-400 hover:text-themePrimary-1000;
   }
