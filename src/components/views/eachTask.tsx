@@ -10,19 +10,19 @@ const EachTask: FC<{ eachTask: Task }> = ({ eachTask }) => {
   const mutation = api.task.changeState.useMutation();
 
   const onStateChange = async () => {
-    setTaskDone(!taskDone);
     await mutation.mutateAsync({
       // @ts-ignore: checked in parent component
       userid: session?.user?.id,
       state: !taskDone,
       taskid: eachTask.id,
     });
+    setTaskDone(!taskDone);
   };
 
   return (
     <div
       onClick={onStateChange}
-      className='my-2 inline-grid h-12 w-full cursor-pointer select-none grid-cols-NotesListItems gap-2 rounded border border-themePrimary-300/20 bg-themePrimary-1100  text-themePrimary-100/70 transition-all duration-200 hover:scale-[1.01] hover:border-themePrimary-300/25 hover:bg-themePrimary-300/5 hover:text-themePrimary-100 hover:shadow-themePrimary-300 hover:drop-shadow-noteItems'>
+      className='my-2 inline-grid h-12 w-11/12 cursor-pointer select-none grid-cols-NotesListItems  gap-2 rounded border border-themePrimary-300/20 bg-themePrimary-1100  text-themePrimary-100/70 transition-all duration-200 hover:scale-[1.01] hover:border-themePrimary-300/25 hover:bg-themePrimary-300/5 hover:text-themePrimary-100 hover:shadow-themePrimary-300 hover:drop-shadow-noteItems'>
       <div className='flex items-center justify-center'>
         {taskDone && (
           <svg
