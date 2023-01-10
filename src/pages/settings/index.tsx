@@ -15,6 +15,9 @@ const Settings: NextPage = () => {
       <>
         <CompHead headTitle='Settings'></CompHead>
         <TopBar avatarUrl={session.user?.image}></TopBar>
+        <p className='absolute top-1/2 left-1/2 -translate-x-1/2 font-lato text-xl text-themePrimary-100'>
+          coming soon...
+        </p>
       </>
     );
   } else if (status == 'unauthenticated') {
