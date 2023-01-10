@@ -6,6 +6,8 @@
  */
 !process.env.SKIP_ENV_VALIDATION && (await import('./src/env/server.mjs'));
 
+import withPWA from 'next-pwa';
+
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
@@ -15,6 +17,7 @@ const config = {
     defaultLocale: 'en',
   },
   images: {
+    domains: ['cdn.discordapp.com', 'avatars.githubusercontent.com'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -45,4 +48,9 @@ const config = {
     ];
   },
 };
-export default config;
+
+export default withPWA({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+  // @ts-ignore
+})(config);
