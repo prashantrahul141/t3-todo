@@ -24,8 +24,8 @@ const FoldersView: FC = () => {
                         <path d='M464 96h-192l-64-64h-160C21.5 32 0 53.5 0 80V160h512V144C512 117.5 490.5 96 464 96zM0 432C0 458.5 21.5 480 48 480h416c26.5 0 48-21.5 48-48V192H0V432z' />
                       </svg>
                     </div>
-                    <div className='w-full'>
-                      <span className='font-lato text-base sm:text-lg'>
+                    <div className='w-16 sm:w-32'>
+                      <span className='break-words font-lato text-base sm:text-lg'>
                         {eachFolder.name}
                       </span>
                     </div>
