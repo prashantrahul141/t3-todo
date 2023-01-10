@@ -24,7 +24,7 @@ const TopBar: FC<{ avatarUrl: string | undefined | null }> = ({
 
           {/* User Avatar */}
           <button
-            className='ml-full btn-ghost btn mr-2 ml-auto hover:bg-transparent'
+            className='ml-full btn-ghost btn mr-2 ml-auto border-none outline-none hover:bg-transparent'
             onClick={() => setShowOptionsMenu(!showOptionsMenu)}>
             <div className='avatar'>
               <div className='w-9  rounded-full'>
