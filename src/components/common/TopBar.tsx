@@ -53,6 +53,9 @@ const TopBar: FC<{ avatarUrl: string | undefined | null }> = ({
               <Link href='/settings'>
                 <div className='nav-navitem py-1'>Settings</div>
               </Link>
+              <Link href='/about'>
+                <div className='nav-navitem py-1'>About</div>
+              </Link>
               <div className='nav-navitem pb-1 pt-1' onClick={() => signOut()}>
                 Sign Out
               </div>
