@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { useRef } from 'react';
 import { useState } from 'react';
 
 const TaskForm: FC<{
@@ -7,13 +8,15 @@ const TaskForm: FC<{
   // add task form component
   const [taskText, setTaskText] = useState('');
   const [disableButton, setDisableButton] = useState(true);
+  const inputRef = useRef<HTMLInputElement>(null);
+
   return (
     <>
       <div className='mt-10 mb-8 flex gap-5'>
         <input
           className='input-nameinput flex-auto'
           placeholder='A great task'
-          id='taskform-inputbox'
+          ref={inputRef}
           maxLength={60}
           minLength={3}
           onChange={(e) => {
@@ -28,9 +31,9 @@ const TaskForm: FC<{
           disabled={disableButton}
           onClick={async (e) => {
             e.preventDefault();
-            (
-              document.getElementById('taskform-inputbox') as HTMLInputElement
-            ).value = '';
+            if (inputRef !== null && inputRef.current !== null) {
+              inputRef.current.value = '';
+            }
             await callback(taskText);
           }}>
           Add Task
