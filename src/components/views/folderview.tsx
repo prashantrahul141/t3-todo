@@ -11,8 +11,6 @@ const FolderView: FC<{ folder_id: string }> = ({ folder_id }) => {
   const { data: session } = useSession();
   const foundFolder = api.folder.get.useQuery({
     folder_id: folder_id,
-    // @ts-ignore: checked in parent component
-    userid: session?.user?.id,
   });
 
   if (foundFolder.data?.status === 200) {

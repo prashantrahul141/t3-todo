@@ -23,7 +23,6 @@ const NewNote: NextPage = () => {
       folderId: noteFolderId,
       noteName: noteName,
       color: noteColor,
-      userId: session?.user?.id || '#',
     });
 
     // redirect to noteview

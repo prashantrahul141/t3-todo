@@ -42,7 +42,6 @@ const NoteView: FC<{ folder_id: string; note_id: string }> = ({
         // Call back function for taskform
         const createdTask = await createTaskMutation.mutateAsync({
           noteid: note_id,
-          userid: session?.user?.id || '#',
           text: text,
         });
         if (createdTask?.createdTask !== undefined) {

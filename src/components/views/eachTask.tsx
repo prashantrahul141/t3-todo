@@ -2,17 +2,13 @@ import type { FC } from 'react';
 import { useState } from 'react';
 import type { Task } from '@prisma/client';
 import { api } from '@utils/api';
-import { useSession } from 'next-auth/react';
 
 const EachTask: FC<{ eachTask: Task }> = ({ eachTask }) => {
-  const { data: session } = useSession();
   const [taskDone, setTaskDone] = useState(eachTask.done);
   const mutation = api.task.changeState.useMutation();
 
   const onStateChange = async () => {
     await mutation.mutateAsync({
-      // @ts-ignore: checked in parent component
-      userid: session?.user?.id,
       state: !taskDone,
       taskid: eachTask.id,
     });

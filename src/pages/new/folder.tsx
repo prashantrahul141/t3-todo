@@ -22,7 +22,6 @@ const NewFolder: NextPage = () => {
       folderName,
       folderDesc,
       folderColor,
-      userId: session ? (session.user ? session.user.id : null) : null,
     });
   };
 
