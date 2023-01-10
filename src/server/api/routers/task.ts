@@ -4,10 +4,8 @@ import { createTRPCRouter, protectedProcedure } from '../trpc';
 
 export const taskRouter = createTRPCRouter({
   changeState: protectedProcedure
-    .input(
-      z.object({ taskid: z.string(), state: z.boolean(), userid: z.string() })
-    )
-    .mutation(async ({ input }) => {
+    .input(z.object({ taskid: z.string(), state: z.boolean() }))
+    .mutation(async ({ input, ctx }) => {
       const presentTask = await prisma.task.findUnique({
         where: {
           id: input.taskid,
@@ -27,7 +25,7 @@ export const taskRouter = createTRPCRouter({
 
       if (
         presentTask !== null &&
-        presentTask.Note?.NotesFolder?.User?.id === input.userid
+        presentTask.Note?.NotesFolder?.User?.id === ctx.session.user.id
       ) {
         const changedTask = await prisma.task.update({
           where: {
@@ -50,10 +48,8 @@ export const taskRouter = createTRPCRouter({
     }),
 
   create: protectedProcedure
-    .input(
-      z.object({ text: z.string(), noteid: z.string(), userid: z.string() })
-    )
-    .mutation(async ({ input }) => {
+    .input(z.object({ text: z.string(), noteid: z.string() }))
+    .mutation(async ({ input, ctx }) => {
       const presentNote = await prisma.note.findUnique({
         where: {
           id: input.noteid,
@@ -67,7 +63,7 @@ export const taskRouter = createTRPCRouter({
         },
       });
 
-      if (presentNote?.NotesFolder?.User?.id === input.userid) {
+      if (presentNote?.NotesFolder?.User?.id === ctx.session.user.id) {
         const createdTask = await prisma.task.create({
           data: { text: input.text, noteId: input.noteid },
         });

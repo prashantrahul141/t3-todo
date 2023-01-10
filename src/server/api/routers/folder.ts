@@ -9,16 +9,15 @@ export const folderRouter = createTRPCRouter({
         folderName: z.string(),
         folderDesc: z.string().nullable(),
         folderColor: z.string(),
-        userId: z.string().nullable(),
       })
     )
-    .mutation(async ({ input }) => {
+    .mutation(async ({ input, ctx }) => {
       const folderCreated = await prisma.notesFolder.create({
         data: {
           name: input.folderName,
           description: input.folderDesc,
           color: input.folderColor,
-          userId: input.userId || '#',
+          userId: ctx.session.user.id,
         },
       });
       return {
@@ -26,16 +25,22 @@ export const folderRouter = createTRPCRouter({
       };
     }),
 
-  list: protectedProcedure.query(async () => {
-    const folders = await prisma.notesFolder.findMany();
+  list: protectedProcedure.query(async ({ ctx }) => {
+    const folders = await prisma.notesFolder.findMany({
+      where: {
+        userId: {
+          equals: ctx.session.user.id,
+        },
+      },
+    });
     return {
       folders,
     };
   }),
 
   get: protectedProcedure
-    .input(z.object({ folder_id: z.string(), userid: z.string().nullable() }))
-    .query(async ({ input }) => {
+    .input(z.object({ folder_id: z.string() }))
+    .query(async ({ input, ctx }) => {
       const foundFolder = await prisma.notesFolder.findUnique({
         where: {
           id: input.folder_id,
@@ -45,7 +50,7 @@ export const folderRouter = createTRPCRouter({
         },
       });
 
-      if (foundFolder !== null && foundFolder.userId == input.userid) {
+      if (foundFolder !== null && foundFolder.userId == ctx.session.user.id) {
         return {
           status: 200,
           foundFolder: foundFolder,

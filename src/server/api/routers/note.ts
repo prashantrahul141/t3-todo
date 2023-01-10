@@ -8,10 +8,9 @@ export const noteRouter = createTRPCRouter({
       z.object({
         note_id: z.string(),
         folder_id: z.string(),
-        userid: z.string(),
       })
     )
-    .query(async ({ input }) => {
+    .query(async ({ input, ctx }) => {
       const foundNoteData = await prisma.note.findUnique({
         where: {
           id: input.note_id,
@@ -29,7 +28,7 @@ export const noteRouter = createTRPCRouter({
       if (
         foundNoteData !== null &&
         foundNoteData.NotesFolder?.id === input.folder_id &&
-        foundNoteData.NotesFolder.userId === input.userid
+        foundNoteData.NotesFolder.userId === ctx.session.user.id
       ) {
         return {
           status: 200,
@@ -48,10 +47,9 @@ export const noteRouter = createTRPCRouter({
         noteName: z.string(),
         folderId: z.string(),
         color: z.string(),
-        userId: z.string(),
       })
     )
-    .mutation(async ({ input }) => {
+    .mutation(async ({ input, ctx }) => {
       const parentFolder = await prisma.notesFolder.findUnique({
         where: { id: input.folderId },
         include: {
@@ -59,7 +57,10 @@ export const noteRouter = createTRPCRouter({
         },
       });
 
-      if (parentFolder !== null && parentFolder.userId === input.userId) {
+      if (
+        parentFolder !== null &&
+        parentFolder.userId === ctx.session.user.id
+      ) {
         const noteCreated = await prisma.note.create({
           data: {
             title: input.noteName,
