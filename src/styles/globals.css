@@ -50,4 +50,20 @@
   .select-option {
     @apply bg-themePrimary-1100 font-lato text-lg checked:bg-themePrimary-300 checked:text-themePrimary-1050;
   }
+
+  .about-question {
+    @apply m-5 my-10 text-left;
+  }
+
+  .about-question-title {
+    @apply mb-1 font-spaceGrotesk text-2xl tracking-wider text-themePrimary-200 sm:text-3xl;
+  }
+
+  .about-question-span {
+    @apply font-lato text-base tracking-wide text-themePrimary-100;
+  }
+
+  .link-text-high {
+    @apply text-themePrimary-400 hover:underline;
+  }
 }
