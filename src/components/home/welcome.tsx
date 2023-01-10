@@ -7,7 +7,7 @@ const Welcome: NextPage = () => {
   return (
     <>
       {/* Top text */}
-      <CompHead headTitle='None'></CompHead>
+      <CompHead headTitle={undefined}></CompHead>
       <div className='absolute top-1/4 left-1/2 w-max -translate-x-1/2'>
         <span className='float-left font-spaceGrotesk text-6xl tracking-widest text-themePrimary-300 sm:text-8xl sm:tracking-wider'>
           T3 TODO
