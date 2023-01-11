@@ -17,8 +17,18 @@ const config = {
     defaultLocale: 'en',
   },
   images: {
-    domains: ['cdn.discordapp.com', 'avatars.githubusercontent.com'],
+    domains: [
+      'cdn.discordapp.com',
+      'avatars.githubusercontent.com',
+      'lh3.googleusercontent.com',
+    ],
     remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+        port: '',
+        pathname: '/a/**',
+      },
       {
         protocol: 'https',
         hostname: 'cdn.discordapp.com',
