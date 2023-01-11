@@ -1,12 +1,18 @@
 <br>
+<a href='#'>
 <p align="center">
    <img width="100" src="/public/static/favicon-big.png" alt="Site Icon">
 </p>
+</a>
 
 <h1 align='center'>T3-Todo</h1>
 
 <h6 align='center'>A to do app made using <a href='https://github.com/t3-oss/create-t3-app'>The T3 Stack</a>.</h6>
 <br>
+
+<a href='#'>
+<img alt='Tests' src='https://github.com/prashantrahul141/t3-todo/actions/workflows/integrate.yml/badge.svg'/>
+</a>
 
 ### Table of contents
 
