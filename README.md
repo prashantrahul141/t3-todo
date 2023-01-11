@@ -10,10 +10,11 @@
 
 ### Table of contents
 
-- [Installation & Setup](#🛠️-installation--set-up)
-- [ScreenShots](#🖼️-screenshots)
-- [Technologies used](#💻-technologies-used)
-  <br>
+- [Installation & Setup](#️-installation--set-up)
+- [ScreenShots](#-screenshots)
+- [Technologies used](#-technologies-used)
+
+<br>
 
 ### 🛠️ Installation & Set Up
 
