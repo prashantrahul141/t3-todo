@@ -18,7 +18,7 @@ const About: NextPage = () => {
         <div className='about-question mt-0'>
           <p className='about-question-title'>What is T3 Todo?</p>
           <span className='about-question-span'>
-            T3 Todo is Todo list app, its the easiest way to write, save and
+            T3 Todo is a to do list app, its the easiest way to write, save and
             maintain your tasks with the help of folders, notes, custom colors.
             Its created by&nbsp;
             <Link
