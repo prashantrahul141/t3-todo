@@ -11,7 +11,7 @@
 ### Table of contents
 
 - [Installation & Setup](#️-installation--set-up)
-- [ScreenShots](#-screenshots)
+- [Screenshots](#️-screenshots)
 - [Technologies used](#-technologies-used)
 
 <br>
