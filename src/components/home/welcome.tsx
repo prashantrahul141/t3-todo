@@ -12,7 +12,7 @@ const Welcome: NextPage = () => {
         <span className='float-left font-spaceGrotesk text-7xl tracking-widest text-themePrimary-300 sm:text-[6.6rem] sm:tracking-wider'>
           T3 TODO
         </span>
-        <span className='float-left clear-left pl-1 font-robotoLight text-xl tracking-wider text-themePrimary-100 sm:pl-2.5 sm:text-2xl sm:tracking-widest'>
+        <span className='float-left clear-left pl-1 font-roboto text-xl tracking-wider text-themePrimary-100 sm:pl-2.5 sm:text-2xl sm:tracking-widest'>
           The easiest way to maintain tasks
         </span>
       </div>
